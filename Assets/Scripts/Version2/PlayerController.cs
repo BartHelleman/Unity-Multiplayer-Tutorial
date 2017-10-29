@@ -39,6 +39,9 @@ namespace Version2
 
         private void Update()
         {
+            if (PauseMenu.IsOn)
+                return;
+
             RaycastHit hit;
             if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f, environmentMask))
                 joint.targetPosition = new Vector3(0f, -hit.point.y, 0f);

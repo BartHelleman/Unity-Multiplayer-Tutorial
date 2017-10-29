@@ -29,6 +29,9 @@ namespace Version2
         {
             currentWeapon = weaponManager.GetCurrentWeapon();
 
+            if (PauseMenu.IsOn)
+                return;
+
             if (currentWeapon.fireRate <= 0)
             {
                 if (Input.GetButtonDown("Fire1"))
